@@ -10,11 +10,15 @@ h1 {
 
 footer {
 
-color: white;
-
+color: black !important;
+margin-top: 2% !important;
+line-height: 3em !important;
 }
 
 ul, li {
   list-style-type: none;
 
+}
+input {
+margin: 2% 0;
 }
