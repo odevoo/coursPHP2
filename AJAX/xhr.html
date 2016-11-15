@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <div id="contenu">
+        
+    </div>
+    <script type="text/javascript">
+        //Methode GET
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'get.php?nom=Manu');
+        xhr.send(null);
+        xhr.addEventListener('readystatechange', function(){
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                
+                document.getElementById('contenu').innerHTML = xhr.responseText;
+            }
+        });
+        //Methode POST
+        xhr.open('POST', 'post.php');
+        xhr.setRequestHeader("content-Type", "application/x-www-form-urlencoded");
+        xhr.send('nom=Manu');
+        xhr.addEventListener('readystatechange', function(){
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                
+                document.getElementById('contenu').innerHTML = xhr.responseText;
+            }
+        });
+        //Methode lire un fichier texte
+        xhr.open('GET', 'mentions.txt');
+        xhr.send(null);
+        xhr.addEventListener('readystatechange', function(){
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                
+                document.getElementById('contenu').innerHTML = xhr.responseText;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="contenu">
+        
+    </div>
+    <div id="loader">
+        <img src="giphy.gif" alt="">
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#loader').show();
+            $.post('post.php', {nom: 'Manu'}, function(data){
+                $('#contenu').html(data);
+            }).done(function(){
+                $('#contenu').append('<p>ok</p>');
+            }).fail(function(){
+                $('#contenu').append('<p>oups</p>');
+            }).always(function(){
+                $('#contenu').append('<p>terminé</p>');
+                $('#loader').hide();
+            });
+        });
+    </script>
+</body>
+</html>

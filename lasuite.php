@@ -8,37 +8,37 @@
 <body>
 	<a href="encorelasuite.php">Encore la suite...</a>
 	<?php
-		$debut = microtime(true);
-		echo '<h1>La boucle FOR</h1>';
-		/* la boucle FOR */
-		echo '<ul>';
-		for($i = 0; $i <= 10; $i++)
-		{
-			echo '<li>'.$i .'</li>';
-		}
-		echo '</ul>';
+	$debut = microtime(true);
+	echo '<h1>La boucle FOR</h1>';
+	/* la boucle FOR */
+	echo '<ul>';
+	for($i = 0; $i <= 10; $i++)
+	{
+		echo '<li>'.$i .'</li>';
+	}
+	echo '</ul>';
 
-		echo '<h1>La boucle WHILE</h1>';
-		$i = 0;
-		$maListe = '<ul class="circle">';
-		while($i <= 10)
-		{
+	echo '<h1>La boucle WHILE</h1>';
+	$i = 0;
+	$maListe = '<ul class="circle">';
+	while($i <= 10)
+	{
 			// concaténation de la ligne dans la variable $maListe 
 			// $maListe .= 'contenu' = $maListe = $maListe . 'contenu';
-			$maListe .= '<li>'.$i++.'</li>';
-		}
-		$maListe .= '</ul>';
-		echo $maListe;
-		unset($i); //nettoyage $i
+		$maListe .= '<li>'.$i++.'</li>';
+	}
+	$maListe .= '</ul>';
+	echo $maListe;
+	unset($i); //nettoyage $i
 
-		echo '<h1>La boucle DO...WHILE</h1>';
-		$u = 0;
-		/* la boucle est exécutée au moins une fois avant la vérification */
-		do
-		{
-			echo '<h4>'.$u++.'</h4>';
-		}
-		while($u <= 10);
+	echo '<h1>La boucle DO...WHILE</h1>';
+	$u = 0;
+	/* la boucle est exécutée au moins une fois avant la vérification */
+	do
+	{
+		echo '<h4>'.$u++.'</h4>';
+	}
+	while($u <= 10);
 		unset($u); //nettoyage $u;
 
 		echo '<h1>La boucle FOREACH(1)</h1>';
@@ -63,9 +63,9 @@
 
 		echo '<h1>La boucle FOREACH(2)</h1>';
 		$aMarques = array('Marque' => 'Fiat',
-						  'Modèle' => '500', 
-						  'Chevaux'=> 4, 
-						  'Places' => 4);
+			'Modèle' => '500', 
+			'Chevaux'=> 4, 
+			'Places' => 4);
 		/*
 		$aMarques = array();
 		$aMarques['Marque'] = 'Fiat';
@@ -78,17 +78,17 @@
 		// affichage du nombre d'éléments dans le tableau
 		echo count($aMarques).'<br/>';
 		echo '<table class="tableau">
-				<thead>
-					<tr><th>Element</th><th>Valeur</th></tr>
-				</thead>
-				<tbody>';
+		<thead>
+			<tr><th>Element</th><th>Valeur</th></tr>
+		</thead>
+		<tbody>';
 		// boucle. On récupère l'élément et sa clé
-		foreach($aMarques as $sIndice=>$sMarque)
-		{
-			echo '<tr><td>'.$sIndice.'</td><td>'.$sMarque.'</td></tr>';
-		}
-		echo '</tbody>
-			</table>';
+			foreach($aMarques as $sIndice=>$sMarque)
+			{
+				echo '<tr><td>'.$sIndice.'</td><td>'.$sMarque.'</td></tr>';
+			}
+			echo '</tbody>
+		</table>';
 		// debuggage du tableau
 		echo '<pre>';
 		print_r($aMarques);
@@ -134,6 +134,6 @@
 		/* date à partir de valeurs numériques (heure, minute, seconde, mois, jour, année) */
 		echo date('d/m/Y H:i:s', mktime(25,10,10,13,32,2016));
 		/* THE END FOR TODAY */
-?>
-</body>
-</html>
+		?>
+	</body>
+	</html>

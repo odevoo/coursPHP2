@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="cat"></label>
+        <select name="categorie" id="cat">
+            <option selected disabled="">Choisissez une catégorie</option>
+            <option value="1">Légumes</option>
+            <option value="8">Fruits</option>
+        </select>
+        <select name="produit" id="prod">
+                       
+        </select>
+        <button type="submit">Go</button>
+    </form>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#cat').on('change', function(){
+                
+                $.get('selectcat.php', {cat: $(this).val()}, function(data){
+                    $('#prod').html(data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

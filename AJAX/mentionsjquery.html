@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="contenu">
+        
+    </div>
+    <script>
+       
+        $('#contenu').slideDown('slow', function(){
+             $('#contenu').load('mentions.txt').wrap('<pre></pre>');
+        });
+
+
+
+
+        $(document).ready(function(){
+            $.get('get.php', {nom: "Manu"}, function(data){
+                $('#contenu').html(data);
+                $('#contenu').css("color", "blue");
+            });
+        });
+        $(document).ready(function(){
+            $.post('post.php', {nom: "Manu"}, function(data){
+                $('#contenu').html(data);
+                $('#contenu').css("color", "blue");
+                $("#contenu").animate({
+                    opacity: 0.7,
+                    left:  +500,
+
+                }, 7000)
+            });
+        });
+    </script>
+</body>
+</html>

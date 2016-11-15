@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="contenu">
+        
+    </div>
+    <script type="text/javascript">
+        $.ajax({
+            method: 'POST',
+            url: 'post.php',
+            data: {nom: "Manu"},
+            success: function(code, statut){
+                console.log(code);
+                console.log(statut);
+            },
+            error: function(resultat, statut, error){
+                alert(resultat);
+                alert(statut);
+                alert(erreur);
+            },
+            beforeSend: bs,
+            complete: end
+        });
+        function end (resultat, statut){
+                console.log(resultat);
+                console.log(statut);
+            }
+
+        function bs () {
+            $('#loader').show();
+        }   
+    </script>
+</body>
+</html>
